@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>КАЗИНО!</title>
+</head>
+<body>
+<center>
+    <p id=score> Ваш счет:1000</p>
+<img width="300"  height="300"  id="1" src="Banan.jpg"><img>
+<img width="300"  height="300"  id="2" src="cherry.png"><img>
+<img width="300"  height="300"  id="3" src="Orexi.jpg"><img>
+<button onclick="start()">play</button>
+<script>
+    i1=0
+    i2=0
+    i3=0
+    score=100
+    function start() {
+        i1=Math.floor(Math.random()*3)+1
+        i2=Math.floor(Math.random()*3)+1
+        i3=Math.floor(Math.random()*3)+1
+        if (i1==1){
+            document.getElementById("1").src="Banan.jpg"
+        }
+        if (i1==2){
+            document.getElementById("1").src="cherry.png"
+        }
+        if (i1==3){
+            document.getElementById("1").src="Orexi.jpg"
+        }
+        if (i2==1){
+            document.getElementById("2").src="Banan.jpg"
+
+        }
+        if (i2==2){
+            document.getElementById("2").src="cherry.png"
+
+        }
+        if (i2==3){
+            document.getElementById("2").src="Orexi.jpg"
+
+        }
+        if (i3==1){
+            document.getElementById("3").src="banan.jpg"
+
+        }
+        if (i3==2){
+            document.getElementById("3").src="cherry.png"
+        }
+        if (i3==3){
+            document.getElementById("3").src="Orexi.jpg"
+        }
+        if (i1==i2&&i1==i3){
+            score+=50
+            document.getElementById("score").innerHTML=score
+        }
+        if(i1!==i2&&i1!==i3){
+            score-=50
+            if (score<0){
+                alert("Вы банкрот")
+            }
+
+            document.getElementById("score").innerHTML=score
+        }
+
+
+    }
+
+
+</script>
+    </center>
+
+</body>
+</html>
